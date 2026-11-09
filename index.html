@@ -1,4 +1,4 @@
-!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -6,9 +6,9 @@
 <title>My IoT Page</title>
 <style>
   /* ---------- YOU CAN CHANGE ALL OF THIS ---------- */
-  body { font-family: Arial, sans-serif; max-width: 640px; margin: 24px auto; padding: 0 16px; background: #f5f5f5; color: #222; }
-  h1   { margin-bottom: 4px; }
-  .card { background: url("images (5).jpg") center / cover fixed; }
+  body { font-family: Arial, sans-serif; max-width: 640px; margin: 24px auto; padding: 0 16px; background: url("background.jpg") center / cover fixed; color: #222; }
+  h1   { margin-bottom: 4px; color: white; }
+  .card { background: #fff; border-radius: 12px; padding: 20px; margin: 16px 0; box-shadow: 0 2px 6px rgba(0,0,0,.1); }
   .status { font-size: 1.6rem; font-weight: bold; margin: 8px 0; }
   .small { color: #666; font-size: .9rem; }
   button { font-size: 1rem; padding: 10px 18px; margin: 4px; border: 0; border-radius: 8px; cursor: pointer; color: #fff; }
@@ -38,12 +38,11 @@
 <!-- ================= PROJECT B : Website -> Arduino ================= -->
 <div class="card">
   <h2>Remote Lamp</h2>
-    <button class="red"   onclick="sendLamp('red')">Red</button>
+  <button class="red"   onclick="sendLamp('red')">Red</button>
   <button class="green" onclick="sendLamp('green')">Green</button>
   <button class="blue"  onclick="sendLamp('blue')">Blue</button>
   <button class="off"   onclick="sendLamp('off')">Off</button>
   <button class="buzz"  onclick="sendLamp('buzz')">Buzz</button>
-  <!-- YOUR TURN: add Green, Blue, and a Buzzer button. -->
   <div class="small" id="lampStatus"></div>
 </div>
 
