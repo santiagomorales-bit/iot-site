@@ -15,6 +15,7 @@
   .red   { background: #d33; }
   .green { background: #2a2; }
   .blue  { background: #36c; }
+  .buzz  { background: #e80; }
   .off   { background: #555; }
   .flash { animation: flash .6s; }
   @keyframes flash { from { background: #ffe66d; } to { background: #fff; } }
@@ -37,8 +38,11 @@
 <!-- ================= PROJECT B : Website -> Arduino ================= -->
 <div class="card">
   <h2>Remote Lamp</h2>
-  <button class="red"   onclick="sendLamp('red')">Red</button>
+    <button class="red"   onclick="sendLamp('red')">Red</button>
+  <button class="green" onclick="sendLamp('green')">Green</button>
+  <button class="blue"  onclick="sendLamp('blue')">Blue</button>
   <button class="off"   onclick="sendLamp('off')">Off</button>
+  <button class="buzz"  onclick="sendLamp('buzz')">Buzz</button>
   <!-- YOUR TURN: add Green, Blue, and a Buzzer button. -->
   <div class="small" id="lampStatus"></div>
 </div>
