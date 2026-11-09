@@ -50,10 +50,9 @@
 
 <script>
 /* =====================================================================
-   SETTINGS - change these two lines
+   SETTINGS
    ===================================================================== */
-const IO_USERNAME   = "your_adafruit_io_username";   // <-- your Adafruit IO username
-const IO_USERNAME   = "lamine_10";   // <-- your Adafruit IO username
+const IO_USERNAME   = "lamine_10";                    // your Adafruit IO username
 const DOORBELL_FEED = "doorbell";                     // Project A feed (Arduino -> web)
 const LAMP_FEED     = "lamp";                         // Project B feed (web -> Arduino)
 const POLL_MS       = 2000;                           // how often to check the doorbell feed (ms). Keep >= 2000.
@@ -118,11 +117,17 @@ async function checkDoorbell() {
 }
 
 function showDoorbell(value, createdAt, flash) {
-  // ===== YOUR TURN =====
-  // Right now this just prints the raw value ("A"). Turn it into a real message:
-  //   "A" -> "Someone is at the door!"   "B" -> ...   "C" -> ...
-  // =====================
-  let message = "Button " + value + " was pressed";
+  // Turn the letter from the Arduino into a real sentence.
+  let message;
+  if (value === "A") {
+    message = "Cruz is at the door!";
+  } else if (value === "B") {
+    message = "Package delivered";
+  } else if (value === "C") {
+    message = "Go away";
+  } else {
+    message = "Unknown button: " + value;   // anything else that shows up on the feed
+  }
 
   document.getElementById("doorbellStatus").textContent = message;
   document.getElementById("doorbellTime").textContent = "at " + new Date(createdAt).toLocaleTimeString();
